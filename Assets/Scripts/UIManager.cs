@@ -74,4 +74,3 @@ public class UIManager : MonoBehaviour
         return output;
     }
 }
-}
