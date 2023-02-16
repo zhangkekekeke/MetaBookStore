@@ -48,7 +48,7 @@ public class PlayerMove : NetworkBehaviour
 
         Vector3 delta = transform.forward * vertical + transform.right * horizontal;
 
-        transform.position += Time.deltaTime * delta * 20;
+        transform.position += Time.deltaTime * delta * 10;
     }
 
     void UpdateTransform()

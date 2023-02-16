@@ -37,12 +37,13 @@ public class UIManager : MonoBehaviour
     void onCollectClick(string ip)
     {
         GameManager.Instance.CollectClient(ip);
+        gameObject.SetActive(false);
     }
 
     void onStartHostClick(string ip)
     {
         GameManager.Instance.StartHost(ip);
-
+        gameObject.SetActive(false);
     }
 
     public static string IP()
