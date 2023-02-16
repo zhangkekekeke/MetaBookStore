@@ -31,7 +31,6 @@ public class PlayerMove : NetworkBehaviour
         if (!IsLocalPlayer)
         {
             SyncTransform();
-
         }
     }
 

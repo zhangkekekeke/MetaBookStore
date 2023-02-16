@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
 
         CollectBtn.onClick.AddListener(delegate ()
         {
-            onCollectClick(Input.text);
+            onCollectClick(ip);
         });
         StartHostBtn.onClick.AddListener(delegate ()
         {
