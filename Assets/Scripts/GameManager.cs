@@ -19,13 +19,11 @@ public class GameManager : MonoBehaviour
 
     public void StartHost(string ip)
     {
-        mTransport.SetConnectionData(ip, 7777);
         NetworkManager.Singleton.StartHost();
     }
 
     public void CollectClient(string ip)
     {
-        mTransport.SetConnectionData(ip, 7777);
         NetworkManager.Singleton.StartClient();
     }
 
