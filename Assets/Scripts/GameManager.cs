@@ -1,8 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,13 +19,16 @@ public class GameManager : MonoBehaviour
     }
 
     public void StartHost(string ip)
-    {
-        NetworkManager.Singleton.StartHost();
+	{
+		mTransport.SetConnectionData("0.0.0.0", 7777);
+		NetworkManager.Singleton.StartServer();
+		NetworkManager.Singleton.SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
     }
 
     public void CollectClient(string ip)
-    {
-        NetworkManager.Singleton.StartClient();
+	{
+		mTransport.SetConnectionData(ip, 7777);
+		NetworkManager.Singleton.StartClient();
     }
 
     // Update is called once per frame

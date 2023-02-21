@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
@@ -15,18 +15,26 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string ip = IP();
+        //string ip = IP();
+	    string ip = "10.31.80.250";
 
         IpText.text = ip;
 
         CollectBtn.onClick.AddListener(delegate ()
         {
-            onCollectClick(ip);
+        	string realIp = Input.text;
+        	if(realIp==null || realIp.Equals(""))
+        	{
+        							   realIp = ip;
+        	}
+	        onCollectClick(realIp);
         });
-        StartHostBtn.onClick.AddListener(delegate ()
-        {
-            onStartHostClick(ip);
-        });
+        
+	    if(StartHostBtn!=null)
+        	StartHostBtn.onClick.AddListener(delegate ()
+        	{
+            					onStartHostClick(ip);
+        	});
     }
 
     // Update is called once per frame
